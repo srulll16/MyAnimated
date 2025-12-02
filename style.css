@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #4a5568, #2d3748);
+    font-family: Arial, sans-serif;
+}
+
+.scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character {
+    position: absolute;
+    bottom: 20%;
+    width: 200px;
+    height: 300px;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSI5NSIgY3k9IjgwIiByPSI0NSIgZmlsbD0iI2ZmZGFkNyIvPgogIDxlbGxpcHNlIGN4PSI5NSIgY3k9IjE1MCIgcng9IjMwIiByeT0iNDAiIGZpbGw9IiNmZmRhZDciLz4KICA8ZWxsaXBzZSBjeD0iNzAiIGN5PSIyNDAiIHJ4PSIyNSIgcnk9IjUwIiBmaWxsPSIjZmZkYWQ3Ii8+CiAgPGVsbGlwc2UgY3g9IjEyMCIgY3k9IjI0MCIgcng9IjI1IiByeT0iNTAiIGZpbGw9IiNmZmRhZDciLz4KICA8Y2lyY2xlIGN4PSI4NSIgY3k9IjEwNSIgcj0iNSIgZmlsbD0iIzAwMCIvPgogIDxjaXJjbGUgY3g9IjEwNSIgY3k9IjEwNSIgcj0iNSIgZmlsbD0iIzAwMCIvPgogIDxwYXRoIGQ9Ik0gODUgMTIwIFF1YWRyYXRpYyA5NSAxMzAgOTUgMTMwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPgogIDx0ZXh0IHg9IjEwMCUiIHk9IjEwMCUiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM2NDY0NjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuMzVlbSI+Q3JlZGl0OiBSdWxsekRldgogIDwvdGV4dD4KPC9zdmc+') no-repeat center;
+    background-size: contain;
+    animation: sad 3s ease-in-out infinite;
+}
+
+@keyframes sad {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.drop {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.splash {
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: splash 0.5s ease-out forwards;
+}
+
+@keyframes splash {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+.credit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #ccc;
+    font-weight: bold;
+}
